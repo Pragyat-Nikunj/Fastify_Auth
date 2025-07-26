@@ -1,0 +1,316 @@
+{
+	"info": {
+		"_postman_id": "9bb7466e-260b-493c-a509-8868bc9b26c5",
+		"name": "Fastify",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "43459186",
+		"_collection_link": "https://pragyatnikunj.postman.co/workspace/Pragyat-Nikunj's-Workspace~4552520d-841c-4fd4-8604-982f83d2b5b4/collection/43459186-9bb7466e-260b-493c-a509-8868bc9b26c5?action=share&source=collection_link&creator=43459186"
+	},
+	"item": [
+		{
+			"name": "Test DB",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:3000/test-db"
+			},
+			"response": []
+		},
+		{
+			"name": "Register",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\":\"John Doe\",\"email\":\"johndoe@example.com\",\"password\":\"password123\",\"country\":\"USA\"}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/api/auth/register"
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ODM5M2U0MjU3NmQ4Y2M3OGFlNzJiNSIsImlhdCI6MTc1MzQ1NTA3NX0._cQPbJGTe8zrwQ40PP8XNRuiRmc-BmpzEtvYFnrVpFg"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"email\":\"johndoe@example.com\",\"password\":\"123456\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/api/auth/login"
+			},
+			"response": []
+		},
+		{
+			"name": "Forgot Password",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"email\":\"johndoe@example.com\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/api/auth/forgot-password"
+			},
+			"response": []
+		},
+		{
+			"name": "Reset Password",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"newPassword\": \"123456\"}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/auth/reset-password/:token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"auth",
+						"reset-password",
+						":token"
+					],
+					"variable": [
+						{
+							"key": "token",
+							"value": "642a38700387bfa5e2a21f0ad877dd931aaf26ac6d2ab4c598fda1848e6d6f1a"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Logout",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ODM5M2U0MjU3NmQ4Y2M3OGFlNzJiNSIsImlhdCI6MTc1MzQ1NTQ4MX0.z6CMrFNufmgfk14qvNh9vZ4skJZAS0CW3cYADbF1PeM"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"email\":\"johndoe@example.com\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/api/auth/logout"
+			},
+			"response": []
+		},
+		{
+			"name": "Create thumbnail",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ODM5M2U0MjU3NmQ4Y2M3OGFlNzJiNSIsImlhdCI6MTc1MzUwODY4Nn0.rh7VBG-bZcDc6eiKqtoSJoJtAoSw7bTdOUKuB6hvpk0"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "videoName",
+							"value": "demo",
+							"type": "text"
+						},
+						{
+							"key": "version",
+							"value": "1.0.0",
+							"type": "text"
+						},
+						{
+							"key": "paid",
+							"value": "true",
+							"type": "text"
+						},
+						{
+							"key": "thumbnail",
+							"type": "file",
+							"src": "/C:/Users/Pragyat/Downloads/Capture.PNG"
+						}
+					]
+				},
+				"url": "http://localhost:3000/api/thumbnail"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Thumbnail",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ODM5M2U0MjU3NmQ4Y2M3OGFlNzJiNSIsImlhdCI6MTc1MzUwODY4Nn0.rh7VBG-bZcDc6eiKqtoSJoJtAoSw7bTdOUKuB6hvpk0"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "videoName",
+							"value": "demo",
+							"type": "text"
+						},
+						{
+							"key": "version",
+							"value": "1.0.0",
+							"type": "text"
+						},
+						{
+							"key": "paid",
+							"value": "true",
+							"type": "text"
+						},
+						{
+							"key": "thumbnail",
+							"type": "file",
+							"src": "/C:/Users/Pragyat/Downloads/Capture.PNG"
+						}
+					]
+				},
+				"url": "http://localhost:3000/api/thumbnail"
+			},
+			"response": []
+		},
+		{
+			"name": "Get thumbnail by Id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ODM5M2U0MjU3NmQ4Y2M3OGFlNzJiNSIsImlhdCI6MTc1MzUwODY4Nn0.rh7VBG-bZcDc6eiKqtoSJoJtAoSw7bTdOUKuB6hvpk0"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "videoName",
+							"value": "demo",
+							"type": "text"
+						},
+						{
+							"key": "version",
+							"value": "1.0.0",
+							"type": "text"
+						},
+						{
+							"key": "paid",
+							"value": "true",
+							"type": "text"
+						},
+						{
+							"key": "thumbnail",
+							"type": "file",
+							"src": "/C:/Users/Pragyat/Downloads/Capture.PNG"
+						}
+					]
+				},
+				"url": "http://localhost:3000/api/thumbnail/68847181c70c9ca4245da9c4"
+			},
+			"response": []
+		},
+		{
+			"name": "Update Thumbnail",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ODM5M2U0MjU3NmQ4Y2M3OGFlNzJiNSIsImlhdCI6MTc1MzUwODY4Nn0.rh7VBG-bZcDc6eiKqtoSJoJtAoSw7bTdOUKuB6hvpk0"
+					}
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"videoName\": \"demo1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/api/thumbnail/688471f6c70c9ca4245da9ca"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete All Thumbnail",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ODM5M2U0MjU3NmQ4Y2M3OGFlNzJiNSIsImlhdCI6MTc1MzUwODY4Nn0.rh7VBG-bZcDc6eiKqtoSJoJtAoSw7bTdOUKuB6hvpk0"
+					}
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"videoName\": \"demo1\"\r\n}"
+				},
+				"url": "http://localhost:3000/api/thumbnail/688471f6c70c9ca4245da9ca"
+			},
+			"response": []
+		}
+	]
+}
