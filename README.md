@@ -38,7 +38,7 @@ Features secure JWT authentication, password reset, and file upload for video th
 ### Installation
 
 ```bash
-git clone https://github.com/yourusername/Fastify_Auth
+git clone https://github.com/Pragyat-Nikunj/Fastify_Auth
 cd Fastify_Auth
 npm install
 ```
