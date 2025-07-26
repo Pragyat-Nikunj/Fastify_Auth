@@ -10,6 +10,7 @@ Features secure JWT authentication, password reset, and file upload for video th
 - Upload, update, delete, and list video thumbnails
 - MongoDB for persistent storage
 - Secure password hashing with bcryptjs
+- **Efficient file streaming using Fastify's streaming capabilities**
 
 ## Tech Stack
 
@@ -37,8 +38,8 @@ Features secure JWT authentication, password reset, and file upload for video th
 ### Installation
 
 ```bash
-git clone https://github.com/yourusername/fastify-thumbnail-auth-api.git
-cd fastify-thumbnail-auth-api
+git clone https://github.com/yourusername/Fastify_Auth
+cd Fastify_Auth
 npm install
 ```
 
